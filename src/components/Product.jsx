@@ -42,14 +42,6 @@ const Container = styled.div`
     transform: scale(1.2);
   }
 `;
-// Video 1:14:24
-const Circle = styled.div`
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: white;
-  position: absolute;
-`;
 
 const Icon = styled.div`
   width: 40px;

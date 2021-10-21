@@ -33,7 +33,12 @@ const SearchContainer = styled.div({
 });
 
 const Input = styled.input({
-  border: "none"
+  border: "none",
+  background: "transparent",
+  ":focus": {
+    border: "none",
+    outline: "none"
+  }
 });
 
 const Center = styled.div({
