@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -16,6 +18,9 @@ const Wrapper = styled.div`
   padding: 0 20px;
   background-color: white;
   border-radius: 7px;
+  ${mobile({
+    width: "90%"
+  })}
 `;
 
 const Title = styled.h1`
@@ -50,24 +55,36 @@ const Button = styled.button`
   font-size: 18px;
 `;
 
-const Link = styled.a`
+const LinkText = styled.a`
   margin: 5px 0;
   text-decoration: underline;
   cursor: pointer;
   text-transform: uppercase;
 `;
+const Back = styled.a`
+  text-decoration: none;
+  padding: 8px 15px;
+  color: black;
+  background: teal;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+`;
 
 export default function Login() {
   return (
     <Container>
+      <Back>
+        <Link to="/">Home</Link>
+      </Back>
       <Wrapper>
         <Title>Sign in</Title>
         <Form>
           <Input placeholder="username" />
           <Input placeholder="password" type="password" />
           <Button>Login</Button>
-          <Link>Forgot password?</Link>
-          <Link>Create new accout</Link>
+          <LinkText>Forgot password?</LinkText>
+          <LinkText>Create new accout</LinkText>
         </Form>
       </Wrapper>
     </Container>

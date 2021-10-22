@@ -4,11 +4,16 @@ import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import styled from "styled-components";
 import { Add, Remove } from "@material-ui/icons";
+import { mobile } from "../responsive";
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 20px;
+
+  ${mobile({
+    padding: "10px"
+  })}
 `;
 
 const Title = styled.h1`
@@ -21,6 +26,9 @@ const Top = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  ${mobile({
+    padding: "5px"
+  })}
 `;
 
 const TopButton = styled.button`
@@ -29,23 +37,42 @@ const TopButton = styled.button`
   border: ${props => props.type === "filled" && "none"};
   background: ${props => (props.type === "filled" ? "black" : "transparent")};
   color: ${props => props.type === "filled" && "white"};
+  ${mobile({
+    fontSize: "10px",
+    padding: "5px"
+  })}
 `;
 
-const TopTexts = styled.div``;
+const TopTexts = styled.div`
+  ${mobile({
+    display: "flex",
+    flexDirection: "column"
+  })}
+`;
 const TopText = styled.span`
   text-decoration: underline;
   cursor: pointer;
   margin: 0 10px;
+  ${mobile({
+    fontSize: "13px"
+  })}
 `;
 
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
+  ${mobile({
+    flexDirection: "column",
+    padding: "20px 10px"
+  })}
 `;
 
 const Info = styled.div`
   flex: 3;
+  ${mobile({
+    marginBottom: 20
+  })}
 `;
 
 const Summary = styled.div`
@@ -59,17 +86,26 @@ const Summary = styled.div`
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({
+    flexDirection: "column"
+  })}
 `;
 
 const ProductDetail = styled.div`
   flex: 2;
   display: flex;
+  ${mobile({
+    flexDirection: "column"
+  })}
 `;
 
 const Image = styled.img`
   width: 200px;
   height: 250px;
   object-fit: cover;
+  ${mobile({
+    width: "100%"
+  })}
 `;
 
 const Details = styled.div`
@@ -125,7 +161,6 @@ const SummaryItem = styled.div`
   font-size: ${props => props.type === "total" && "25px"};
 `;
 const SummaryItemText = styled.span``;
-const SummaryItemPrice = styled.span``;
 const SummaryButton = styled.button`
   width: 100%;
   padding: 10px;

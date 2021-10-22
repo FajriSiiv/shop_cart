@@ -4,6 +4,7 @@ import Announcement from "../components/Announcement";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { Remove, Add } from "@material-ui/icons";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   background: #fcf5f5;
@@ -12,22 +13,35 @@ const Container = styled.div`
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
+  ${mobile({
+    padding: "20px 8px",
+    flexDirection: "column"
+  })}
 `;
 
 const ImgContainer = styled.div`
   flex: 1;
   padding: 0 50px;
+  ${mobile({
+    padding: "0px"
+  })}
 `;
 
 const Image = styled.img`
   width: 100%;
   height: 90vh;
   object-fit: cover;
+  ${mobile({
+    height: "200px"
+  })}
 `;
 
 const InfoContainer = styled.div`
   flex: 1;
   padding: 0 50px;
+  ${mobile({
+    padding: "20px 8px"
+  })}
 `;
 
 const Title = styled.h1`
@@ -48,17 +62,27 @@ const FilterContainer = styled.div`
   justify-content: space-between;
   width: 70%;
   margin-top: 30px;
+  ${mobile({
+    flexDirection: "column"
+  })}
 `;
 
 const Filter = styled.div`
   display: flex;
   align-items: center;
+  ${mobile({
+    margin: "10px 0"
+  })}
 `;
 
 const FilterTitle = styled.span`
   font-size: 20px;
   font-weight: 300;
   margin-right: 10px;
+  margin-bottom: 20px;
+  ${mobile({
+    margin: "0px 10px"
+  })}
 `;
 
 const FilterColor = styled.div`
@@ -83,6 +107,9 @@ const AddContainer = styled.div`
   align-items: center;
   margin-top: 30px;
   justify-content: space-between;
+  ${mobile({
+    width: "100%"
+  })}
 `;
 
 const AmountContainer = styled.div`
@@ -134,10 +161,10 @@ export const Product = () => {
             maiores, nisi consectetur quaerat vel quos consequuntur neque magnam doloribus ratione
             dolores facilis dolorum. Commodi.
           </Desc>
-          <Price>$ 20</Price>
+          <Price>$ 230</Price>
           <FilterContainer>
             <Filter>
-              <FilterTitle>Color :</FilterTitle>
+              <FilterTitle>Color</FilterTitle>
               <FilterColor color="black" />
               <FilterColor color="white" />
               <FilterColor color="red" />

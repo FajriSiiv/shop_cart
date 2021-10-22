@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
 import { slideItems } from "../data";
-const Container = styled.div(props => ({
-  width: "100%",
-  height: "100vh",
-  display: "flex",
-  position: "relative",
-  // justifyContent: "center"
-  overflow: "hidden"
-}));
+import { mobile } from "../responsive";
+
+const Container = styled.div`
+  widht: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  ${mobile({
+    display: "none"
+  })}
+`;
 
 const Arrow = styled.div(props => ({
   width: 50,
@@ -45,7 +49,9 @@ const Slide = styled.div(props => ({
 }));
 
 const Image = styled.img({
-  height: "80%"
+  height: "80%",
+  width: "400px",
+  objectFit: "cover"
 });
 
 const ImgContainer = styled.div({

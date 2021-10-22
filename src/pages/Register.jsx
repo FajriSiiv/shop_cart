@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import React from "react";
+import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -9,6 +11,11 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${mobile({
+    padding: "20px 7px",
+    height: "fit-content"
+  })}
 `;
 
 const Wrapper = styled.div`
@@ -16,6 +23,10 @@ const Wrapper = styled.div`
   padding: 0 20px;
   background-color: white;
   border-radius: 7px;
+  ${mobile({
+    width: "100%",
+    marginTop: 50
+  })}
 `;
 
 const Title = styled.h1`
@@ -23,11 +34,15 @@ const Title = styled.h1`
   text-transform: uppercase;
   font-weight: 500;
   margin-top: 10px;
+  margin-bottom: 20px;
 `;
 
 const Form = styled.form`
   display: flex;
   flex-wrap: wrap;
+  ${mobile({
+    flexDirection: "column"
+  })}
 `;
 
 const Input = styled.input`
@@ -36,6 +51,9 @@ const Input = styled.input`
   margin: 20px 10px 0 0;
   padding: 10px;
   font-size: 18px;
+  ${mobile({
+    margin: "10px 0"
+  })}
 `;
 
 const Agreement = styled.span`
@@ -52,11 +70,27 @@ const Button = styled.button`
   cursor: pointer;
   margin-bottom: 10px;
   font-size: 18px;
+  ${mobile({
+    width: "100%"
+  })}
+`;
+
+const Back = styled.a`
+  text-decoration: none;
+  padding: 8px 15px;
+  color: black;
+  background: teal;
+  position: absolute;
+  top: 20px;
+  left: 20px;
 `;
 
 const Register = () => {
   return (
     <Container>
+      <Back>
+        <Link to="/">Home</Link>
+      </Back>
       <Wrapper>
         <Title>Create your account</Title>
         <Form>

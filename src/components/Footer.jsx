@@ -1,16 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  Facebook,
-  Instagram,
-  Twitter,
-  Room,
-  MailOutline,
-  Payment,
-  Phone
-} from "@material-ui/icons";
+import { Facebook, Instagram, Room, MailOutline, Payment, Phone, GitHub } from "@material-ui/icons";
+import { mobile } from "../responsive";
+
 const Container = styled.div`
   display: flex;
+  ${mobile({
+    flexDirection: "column"
+  })}
 `;
 
 const Left = styled.div`
@@ -30,7 +27,7 @@ const SocialContainer = styled.div`
   display: flex;
 `;
 
-const SocialIcon = styled.div`
+const SocialIcon = styled.a`
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -93,8 +90,8 @@ export default function Footer() {
           <SocialIcon color="e4405f">
             <Instagram />
           </SocialIcon>
-          <SocialIcon color="55acee">
-            <Twitter />
+          <SocialIcon color="000000" href="https://github.com/FajriSiiv" target="_blank">
+            <GitHub />
           </SocialIcon>
         </SocialContainer>
       </Left>

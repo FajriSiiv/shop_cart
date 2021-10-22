@@ -39,7 +39,7 @@ export const categories = [
     title: "Shirt Style"
   },
   {
-    id: 2,
+    id: 3,
     img:
       "https://images.unsplash.com/photo-1633792701226-526f17288218?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80",
     title: "Shirt Style"
